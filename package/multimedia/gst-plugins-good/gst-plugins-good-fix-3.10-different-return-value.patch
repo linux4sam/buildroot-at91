@@ -1,0 +1,33 @@
+gstreamer: fix gst-launch error for 3.10 kernel
+
+port this fix from gstreamer project.
+
+Signed-off-by: Josh Wu<josh.wu@atmel.com>
+
+  From 305023fe9d5f8f3ffd5c49b1d1b743f569a9265d Mon Sep 17 00:00:00 2001
+  From: Philipp Zabel <p.zabel@pengutronix.de>
+  Date: Thu, 18 Oct 2012 08:37:35 +0000
+  Subject: v4l2: handle ENODATA return value for VIDIOC_ENUMSTD
+
+  In kernel v3.7-rc1, VIDIOC_ENUMSTD returns ENODATA if the current input
+  does not support the STD API.
+
+https://bugzilla.gnome.org/show_bug.cgi?id=698827
+---
+(limited to 'sys/v4l2/v4l2_calls.c')
+
+diff --git a/sys/v4l2/v4l2_calls.c b/sys/v4l2/v4l2_calls.c
+index afa2f13..e9201a2 100644
+--- a/sys/v4l2/v4l2_calls.c
++++ b/sys/v4l2/v4l2_calls.c
+@@ -204,7 +204,7 @@ gst_v4l2_fill_lists (GstV4l2Object * v4l2object)
+     standard.index = n;
+ 
+     if (v4l2_ioctl (v4l2object->video_fd, VIDIOC_ENUMSTD, &standard) < 0) {
+-      if (errno == EINVAL || errno == ENOTTY)
++      if (errno == EINVAL || errno == ENOTTY || errno == ENODATA)
+         break;                  /* end of enumeration */
+       else {
+         GST_ELEMENT_ERROR (e, RESOURCE, SETTINGS,
+--
+cgit v0.9.0.2-2-gbebe
