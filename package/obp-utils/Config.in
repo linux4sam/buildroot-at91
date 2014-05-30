@@ -1,0 +1,6 @@
+config BR2_PACKAGE_OBP_UTILS
+	bool "obp-utils"
+	help
+	  command line utility for maXTouch devices.
+
+	  https://github.com/atmel-maxtouch/obp-utils
