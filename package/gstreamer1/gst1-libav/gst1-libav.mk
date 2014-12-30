@@ -63,7 +63,11 @@ endif
 ifeq ($(BR2_ARM_CPU_HAS_NEON),y)
 GST1_LIBAV_CONF_EXTRA_OPT += --enable-neon
 else
+ifeq ($(BR2_ARM_CPU_MAYBE_HAS_NEON),y)
+# empty here. The NEON can be detected by configure process.
+else
 GST1_LIBAV_CONF_EXTRA_OPT += --disable-neon
+endif
 endif
 ifeq ($(BR2_ARM_CPU_HAS_VFPV2),y)
 GST1_LIBAV_CONF_EXTRA_OPT += --enable-vfp
