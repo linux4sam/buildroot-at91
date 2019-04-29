@@ -118,4 +118,9 @@ else
 BLUEZ5_UTILS_CONF_OPTS += --disable-systemd
 endif
 
+define BLUEZ5_UTILS_INSTALL_GATTEXAMPLE
+        $(INSTALL) -D -m 0755 $(@D)/tools/btgatt-server $(TARGET_DIR)/usr/bin/btgatt-server
+endef
+BLUEZ5_UTILS_POST_INSTALL_TARGET_HOOKS += BLUEZ5_UTILS_INSTALL_GATTEXAMPLE
+
 $(eval $(autotools-package))
