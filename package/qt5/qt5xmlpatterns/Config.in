@@ -1,6 +1,7 @@
 config BR2_PACKAGE_QT5XMLPATTERNS
 	bool "qt5xmlpatterns"
 	select BR2_PACKAGE_QT5BASE
+	depends on BR2_PACKAGE_QT5DECLARATIVE
 	help
 	  Qt is a cross-platform application and UI framework for
 	  developers using C++.
