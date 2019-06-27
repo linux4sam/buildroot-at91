@@ -44,7 +44,7 @@ ifeq ($(BR2_PACKAGE_DHCP_SERVER),y)
 define DHCP_INSTALL_SERVER
 	mkdir -p $(TARGET_DIR)/var/lib
 	(cd $(TARGET_DIR)/var/lib; ln -snf /tmp dhcp)
-	$(INSTALL) -m 0755 -D $(@D)/server/dhcpd $(TARGET_DIR)/usr/sbin/dhcpd
+	$(@D)/libtool --mode=install install -m 0755 -D $(@D)/server/dhcpd $(TARGET_DIR)/usr/sbin/dhcpd
 	$(INSTALL) -m 0644 -D package/dhcp/dhcpd.conf \
 		$(TARGET_DIR)/etc/dhcp/dhcpd.conf
 endef
@@ -102,6 +102,9 @@ define DHCP_INSTALL_TARGET_CMDS
 	$(DHCP_INSTALL_RELAY)
 	$(DHCP_INSTALL_SERVER)
 	$(DHCP_INSTALL_CLIENT)
+	$(@D)/libtool --mode=install install -m 0644 -D $(@D)/dhcpctl/libdhcpctl.la $(TARGET_DIR)/usr/lib
+	$(@D)/libtool --mode=install install -m 0644 -D $(@D)/common/libdhcp.la $(TARGET_DIR)/usr/lib
+	$(@D)/libtool --mode=install install -m 0644 -D $(@D)/omapip/libomapi.la $(TARGET_DIR)/usr/lib
 endef
 
 $(eval $(autotools-package))
