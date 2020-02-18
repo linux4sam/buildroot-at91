@@ -64,6 +64,8 @@ define HOST_NODEJS_CONFIGURE_CMDS
 		--shared-openssl-includes=$(HOST_DIR)/include/openssl \
 		--shared-openssl-libpath=$(HOST_DIR)/lib \
 		--shared-zlib \
+		--shared-zlib-includes=$(HOST_ZLIB_SRCDIR) \
+		--shared-zlib-libpath=$(HOST_DIR)/lib \
 		--no-cross-compiling \
 		--with-intl=small-icu \
 	)
