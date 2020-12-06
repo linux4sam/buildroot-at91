@@ -1038,13 +1038,13 @@ int conf_write_autoconf(void)
 	if (!name)
 		name = "include/generated/autoconf.h";
 	sprintf(buf, "%s.tmpconfig.h", dir);
-	if (rename(buf, name))
+	if (file_move(buf, name))
 		return 1;
 	name = getenv("KCONFIG_TRISTATE");
 	if (!name)
 		name = "include/config/tristate.conf";
 	sprintf(buf, "%s.tmpconfig_tristate", dir);
-	if (rename(buf, name))
+	if (file_move(buf, name))
 		return 1;
 	name = conf_get_autoconfig_name();
 	/*
@@ -1052,7 +1052,7 @@ int conf_write_autoconf(void)
 	 * and this marks the successful completion of the previous steps.
 	 */
 	sprintf(buf, "%s.tmpconfig", dir);
-	if (rename(buf, name))
+	if (file_move(buf, name))
 		return 1;
 
 	return 0;
