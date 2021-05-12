@@ -34,7 +34,7 @@ CAIRO_CONF_OPTS = \
 	--enable-trace=no \
 	--enable-interpreter=no
 
-CAIRO_DEPENDENCIES = host-pkgconf fontconfig pixman
+CAIRO_DEPENDENCIES = host-pkgconf pixman
 
 # Just the bare minimum to make other host-* packages happy
 HOST_CAIRO_CONF_OPTS = \
@@ -169,6 +169,13 @@ ifeq ($(BR2_PACKAGE_CAIRO_XML),y)
 CAIRO_CONF_OPTS += --enable-xml
 else
 CAIRO_CONF_OPTS += --disable-xml
+endif
+
+ifeq ($(BR2_PACKAGE_FONTCONFIG),y)
+CAIRO_CONF_OPTS += --enable-fc
+CAIRO_DEPENDENCIES += fontconfig
+else
+CAIRO_CONF_OPTS += --disable-fc
 endif
 
 $(eval $(autotools-package))
