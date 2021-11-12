@@ -146,6 +146,22 @@ endif
 
 comment "Legacy options removed in 2021.02"
 
+config BR2_OPENJDK_VERSION_LTS
+	bool "OpenJDK LTS version was renamed to OpenJDK 11"
+	select BR2_LEGACY
+	select BR2_PACKAGE_OPENJDK_VERSION_11
+	help
+	  The LTS version option was renamed to OpenJDK 11 to make it
+	  clear what LTS version is.
+
+config BR2_OPENJDK_VERSION_LATEST
+	bool "OpenJDK latest version (16.x) was removed"
+	select BR2_LEGACY
+	select BR2_PACKAGE_OPENJDK_VERSION_17
+	help
+	  OpenJDK 16.x is no longer mainted, so the option has been
+	  removed. Use OpenJDK 17.x instead.
+
 config BR2_PACKAGE_GNURADIO_PAGER
 	bool "gnuradio gr-flex support removed"
 	select BR2_LEGACY
@@ -274,6 +290,26 @@ config BR2_PACKAGE_IPSEC_TOOLS
 	help
 	  This package has been removed as it has security issues and
 	  has been abandoned since 2014.
+
+config BR2_PACKAGE_GPSD_FIXED_PORT_SPEED
+	bool "compile with fixed serial port speed"
+	select BR2_LEGACY
+	help
+	  Since gpsd 3.20, GPSD_FIXED_PORT_SPEED is replaced
+	  by runtime option --speed.
+
+config BR2_PACKAGE_GPSD_RECONFIGURE
+	bool "allow gpsd to change device settings"
+	select BR2_LEGACY
+	help
+	  Since gpsd 3.21, GPSD_RECONFIGURE is replaced
+	  by runtime option --passive.
+
+config BR2_PACKAGE_GPSD_CONTROLSEND
+	bool "allow gpsctl/gpsmon to change device settings"
+	select BR2_LEGACY
+	help
+	  Option removed in gpsd 3.21
 
 comment "Legacy options removed in 2020.11"
 
