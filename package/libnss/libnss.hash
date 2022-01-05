@@ -1,4 +1,4 @@
-# From https://ftp.mozilla.org/pub/security/nss/releases/NSS_3_61_RTM/src/SHA256SUMS
-sha256  312e2d804b34ccf0fec70b57cf8cd6ac853f8ced60df53e30ebb0a7bcd0e1370  nss-3.61.tar.gz
+# From https://ftp.mozilla.org/pub/security/nss/releases/NSS_3_68_1_RTM/src/SHA256SUMS
+sha256  d0b38f7c3f146211aacc5d55fb6383abcc11a4d7ca6a36be7cbceaaed2a9ea3b  nss-3.68.1.tar.gz
 # Locally calculated
 sha256  a20c1a32d1f8102432360b42e932869f7c11c7cdbacf9cac554c422132af47f4  nss/COPYING
