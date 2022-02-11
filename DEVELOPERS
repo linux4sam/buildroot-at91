@@ -131,6 +131,9 @@ F:	package/wine/
 N:	Andreas Klinger <ak@it-klinger.de>
 F:	package/ply/
 
+N:	Andreas Ziegler <br015@umbiko.net>
+F:	package/mpd/
+
 N:	Andrey Smirnov <andrew.smirnov@gmail.com>
 F:	package/python-backports-shutil-get-terminal-size/
 F:	package/python-decorator/
@@ -757,9 +760,6 @@ F:	package/optee-test/
 
 N:	Eugene Tarassov <eugene@largest.net>
 F:	package/tcf-agent/
-
-N:	Evan Zelkowitz <evan.zelkowitz@gmail.com>
-F:	package/sdl_gfx/
 
 N:	Ezequiel Garcia <ezequiel@vanguardiasur.com.ar>
 F:	board/ci20/
@@ -2284,21 +2284,6 @@ F:	support/testing/tests/package/test_glxinfo.py
 F:	support/testing/tests/package/test_openssh.py
 F:	toolchain/
 
-N:	Roman Gorbenkov <roman.gorbenkov@ens2m.org>
-F:	package/davfs2/
-
-N:	Ryan Barnett <ryan.barnett@collins.com>
-F:	package/atftp/
-F:	package/c-periphery/
-F:	package/miraclecast/
-F:	package/opkg/
-F:	package/opkg-utils/
-F:	package/python-pysnmp/
-F:	package/python-pysnmp-mibs/
-F:	package/python-tornado/
-F:	package/resiprocate/
-F:	package/websocketpp/
-
 N:	Ryan Wilkins <ryan@deadfrog.net>
 F:	package/biosdevname/
 
@@ -2323,9 +2308,6 @@ F:	support/misc/toolchainfile.cmake.in
 
 N:	Sam Voss <sam.voss@gmail.com>
 F:	package/ripgrep/
-
-N:	Santosh Multhalli <santosh.multhalli@collins.com>
-F:	package/valijson/
 
 N:	Sébastien Szymanski <sebastien.szymanski@armadeus.com>
 F:	package/mmc-utils/
@@ -2752,6 +2734,7 @@ F:	configs/beaglebone_defconfig
 F:	configs/beaglebone_qt5_defconfig
 F:	package/acl/
 F:	package/attr/
+F:	package/avrdude/
 F:	package/boost/
 F:	package/bootstrap/
 F:	package/cannelloni/
