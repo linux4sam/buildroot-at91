@@ -178,5 +178,7 @@ else
 CAIRO_CONF_OPTS += --disable-fc
 endif
 
+CAIRO_AUTORECONF = YES
+
 $(eval $(autotools-package))
 $(eval $(host-autotools-package))
