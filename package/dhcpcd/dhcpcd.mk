@@ -53,17 +53,17 @@ endef
 # When network-manager is enabled together with dhcpcd, it will use
 # dhcpcd as a DHCP client, and will be in charge of running, so we
 # don't want the init script or service file to be installed.
-ifeq ($(BR2_PACKAGE_NETWORK_MANAGER),)
-define DHCPCD_INSTALL_INIT_SYSV
-	$(INSTALL) -m 755 -D package/dhcpcd/S41dhcpcd \
-		$(TARGET_DIR)/etc/init.d/S41dhcpcd
-endef
+#ifeq ($(BR2_PACKAGE_NETWORK_MANAGER),)
+#define DHCPCD_INSTALL_INIT_SYSV
+#	$(INSTALL) -m 755 -D package/dhcpcd/S41dhcpcd \
+#		$(TARGET_DIR)/etc/init.d/S41dhcpcd
+#endef
 
-define DHCPCD_INSTALL_INIT_SYSTEMD
-	$(INSTALL) -D -m 0644 package/dhcpcd/dhcpcd.service \
-		$(TARGET_DIR)/usr/lib/systemd/system/dhcpcd.service
-endef
-endif
+#define DHCPCD_INSTALL_INIT_SYSTEMD
+#	$(INSTALL) -D -m 0644 package/dhcpcd/dhcpcd.service \
+#		$(TARGET_DIR)/usr/lib/systemd/system/dhcpcd.service
+#endef
+#endif
 
 define DHCPCD_USERS
 	dhcpcd -1 dhcpcd -1 * - - - dhcpcd user
