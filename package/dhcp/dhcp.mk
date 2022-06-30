@@ -36,7 +36,8 @@ DHCP_BIND_EXTRA_CONFIG = \
 	BUILD_CFLAGS='$(HOST_CFLAGS)' \
 	BUILD_CPPFLAGS='$(HOST_CPPFLAGS)' \
 	BUILD_LDFLAGS='$(HOST_LDFLAGS)' \
-	RANLIB='$(TARGET_RANLIB)'
+	RANLIB='$(TARGET_RANLIB)' \
+	--disable-backtrace
 
 DHCP_CONF_ENV += ac_cv_prog_AWK=$(HOST_DIR)/bin/gawk
 
@@ -61,8 +62,13 @@ else
 DHCP_BIND_EXTRA_CONFIG += --without-zlib
 endif
 
+ifeq ($(BR2_TOOLCHAIN_HAS_ATOMIC),y)
+DHCP_BIND_EXTRA_CONFIG += --enable-atomic
 ifeq ($(BR2_TOOLCHAIN_HAS_LIBATOMIC),y)
 DHCP_CONF_ENV += LIBS=-latomic
+endif
+else
+DHCP_BIND_EXTRA_CONFIG += --disable-atomic
 endif
 
 ifeq ($(BR2_STATIC_LIBS),y)
