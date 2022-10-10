@@ -106,6 +106,13 @@ config BR2_TARGET_AT91BOOTSTRAP3_CUSTOM_CONFIG_FILE
 	help
 	  Path to the at91bootstrap3 configuration file
 
+config BR2_TARGET_AT91BOOTSTRAP3_CONFIG_FRAGMENT_FILES
+	string "Additional configuration fragment files"
+	help
+	  A space-separated list of configuration fragment files,
+	  that will be merged to the main at91bootstrap3 configuration
+	  file.
+
 config BR2_TARGET_AT91BOOTSTRAP3_NEEDS_PYTHON3
 	bool "needs host-python3"
 	help
