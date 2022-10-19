@@ -188,9 +188,11 @@ define BLUEZ5_UTILS_INSTALL_INIT_SYSV
 		$(TARGET_DIR)/etc/init.d/S40bluetoothd
 endef
 
+ifeq ($(BR2_PACKAGE_BLUEZ5_UTILS_TOOLS),y)
 define BLUEZ5_UTILS_INSTALL_GATTEXAMPLE
         $(INSTALL) -D -m 0755 $(@D)/tools/btgatt-server $(TARGET_DIR)/usr/bin/btgatt-server
 endef
 BLUEZ5_UTILS_POST_INSTALL_TARGET_HOOKS += BLUEZ5_UTILS_INSTALL_GATTEXAMPLE
+endif
 
 $(eval $(autotools-package))
