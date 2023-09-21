@@ -4,7 +4,7 @@
 #
 ################################################################################
 
-PHP_VERSION = 8.2.5
+PHP_VERSION = 8.2.8
 PHP_SITE = https://www.php.net/distributions
 PHP_SOURCE = php-$(PHP_VERSION).tar.xz
 PHP_INSTALL_STAGING = YES
@@ -82,6 +82,13 @@ PHP_CONF_ENV += ac_cv_func_dlopen=yes ac_cv_lib_dl_dlopen=yes
 PHP_EXTRA_LIBS += -ldl
 else
 PHP_CONF_ENV += ac_cv_func_dlopen=no ac_cv_lib_dl_dlopen=no
+endif
+
+# php has some assembly function that is not present in Thumb mode:
+# Error: selected processor does not support `umlal r2,r1,r0,r3' in Thumb mode
+# so, we desactivate Thumb mode
+ifeq ($(BR2_ARM_INSTRUCTIONS_THUMB),y)
+PHP_CFLAGS += -marm
 endif
 
 PHP_CONF_OPTS += $(if $(BR2_PACKAGE_PHP_SAPI_CLI),--enable-cli,--disable-cli)
