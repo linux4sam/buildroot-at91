@@ -201,6 +201,9 @@ endef
 ifeq ($(BR2_PACKAGE_BLUEZ5_UTILS_TOOLS),y)
 define BLUEZ5_UTILS_INSTALL_GATTEXAMPLE
         $(INSTALL) -D -m 0755 $(@D)/tools/btgatt-server $(TARGET_DIR)/usr/bin/btgatt-server
+        $(INSTALL) -D -m 755 $(@D)/gdbus/.libs/libgdbus-internal.a $(STAGING_DIR)/usr/lib/libgdbus-internal.a
+        $(INSTALL) -D -m 755 $(@D)/src/.libs/libshared-glib.a $(STAGING_DIR)/usr/lib/libshared-glib.a
+        $(INSTALL) -D -m 755 $(@D)/lib/.libs/libbluetooth-internal.a $(STAGING_DIR)/usr/lib/libbluetooth-internal.a
 endef
 BLUEZ5_UTILS_POST_INSTALL_TARGET_HOOKS += BLUEZ5_UTILS_INSTALL_GATTEXAMPLE
 endif
