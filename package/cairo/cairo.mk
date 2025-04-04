@@ -121,5 +121,7 @@ else
 CAIRO_CONF_OPTS += --disable-fc
 endif
 
+CAIRO_AUTORECONF = YES
+
 $(eval $(meson-package))
 $(eval $(host-meson-package))
