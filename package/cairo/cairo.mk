@@ -115,10 +115,10 @@ CAIRO_CONF_OPTS += -Dzlib=disabled
 endif
 
 ifeq ($(BR2_PACKAGE_FONTCONFIG),y)
-CAIRO_CONF_OPTS += --enable-fc
+CAIRO_CONF_OPTS += -Dfontconfig=enabled
 CAIRO_DEPENDENCIES += fontconfig
 else
-CAIRO_CONF_OPTS += --disable-fc
+CAIRO_CONF_OPTS += -Dfontconfig=disabled
 endif
 
 CAIRO_AUTORECONF = YES
