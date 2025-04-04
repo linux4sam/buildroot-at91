@@ -1,12 +1,6 @@
 export PATH=@PATH@
 
-if [ "$PS1" ]; then
-	if [ "`id -u`" -eq 0 ]; then
-		export PS1='# '
-	else
-		export PS1='$ '
-	fi
-fi
+export PS1="\e[0;32m[\u@\h \W]\$ \e[0m"
 
 export EDITOR='/bin/vi'
 
