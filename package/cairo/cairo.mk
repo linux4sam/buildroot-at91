@@ -41,7 +41,6 @@ CAIRO_CONF_OPTS = \
 	-Dc_std=gnu11
 CAIRO_DEPENDENCIES = \
 	host-pkgconf \
-	fontconfig \
 	pixman
 
 # Just the bare minimum to make other host-* packages happy
@@ -113,6 +112,13 @@ CAIRO_CONF_OPTS += -Dzlib=enabled
 CAIRO_DEPENDENCIES += zlib
 else
 CAIRO_CONF_OPTS += -Dzlib=disabled
+endif
+
+ifeq ($(BR2_PACKAGE_FONTCONFIG),y)
+CAIRO_CONF_OPTS += --enable-fc
+CAIRO_DEPENDENCIES += fontconfig
+else
+CAIRO_CONF_OPTS += --disable-fc
 endif
 
 $(eval $(meson-package))
