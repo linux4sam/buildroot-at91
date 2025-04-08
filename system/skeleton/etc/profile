@@ -4,6 +4,17 @@ export PS1="\e[0;32m[\u@\h \W]\$ \e[0m"
 
 export EDITOR='/bin/vi'
 
+# Optimized resize function for bash
+resize() {
+	local x y
+	IFS='[;' read -t 2 -p $(printf '\e7\e[r\e[999;999H\e[6n\e8') -sd R _ y x _
+	[ -n "$y" ] && \
+	echo -e "COLUMNS=$x;\nLINES=$y;\nexport COLUMNS LINES;" && \
+	stty cols $x rows $y
+}
+
+resize > /dev/null
+
 # Source configuration files from /etc/profile.d
 for i in /etc/profile.d/*.sh ; do
 	if [ -r "$i" ]; then
