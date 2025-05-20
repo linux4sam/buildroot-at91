@@ -13,7 +13,14 @@ OPENSSH_SITE = http://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable
 OPENSSH_LICENSE = BSD-3-Clause, BSD-2-Clause, Public Domain
 OPENSSH_LICENSE_FILES = LICENCE
 
+OPENSSH_CFLAGS = $(TARGET_CFLAGS)
+
+ifeq ($(BR2_ARM_INSTRUCTIONS_THUMB),y)
+OPENSSH_CFLAGS += -marm
+endif
+
 OPENSSH_CONF_ENV = \
+	CFLAGS="$(OPENSSH_CFLAGS)" \
 	LD="$(TARGET_CC)" \
 	LDFLAGS="$(TARGET_CFLAGS)" \
 	LIBS=`$(PKG_CONFIG_HOST_BINARY) --libs openssl`
