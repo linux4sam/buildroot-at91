@@ -18,6 +18,8 @@ OPENSSH_CFLAGS = $(TARGET_CFLAGS)
 ifeq ($(BR2_ARM_INSTRUCTIONS_THUMB),y)
 OPENSSH_CFLAGS += -marm
 endif
+# 0001-fix-logic-error-in-disableforwarding-option.patch
+OPENSSH_IGNORE_CVES += CVE-2025-32728
 
 OPENSSH_CONF_ENV = \
 	CFLAGS="$(OPENSSH_CFLAGS)" \

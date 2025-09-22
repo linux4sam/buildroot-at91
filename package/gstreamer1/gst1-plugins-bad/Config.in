@@ -652,19 +652,25 @@ config BR2_PACKAGE_GST1_PLUGINS_BAD_PLUGIN_WAYLAND
 config BR2_PACKAGE_GST1_PLUGINS_BAD_PLUGIN_WEBP
 	bool "webp"
 	select BR2_PACKAGE_WEBP
+	select BR2_PACKAGE_WEBP_MUX
 	help
 	  Webp image format plugin
 
 config BR2_PACKAGE_GST1_PLUGINS_BAD_PLUGIN_WEBRTC
 	bool "webrtc"
 	depends on !BR2_STATIC_LIBS # libnice -> gnutls
+	depends on BR2_TOOLCHAIN_HAS_SYNC_4 # gst1-plugins-bad sctp
 	select BR2_PACKAGE_GST1_PLUGINS_BASE # libgstsdp
 	select BR2_PACKAGE_LIBNICE
+	select BR2_PACKAGE_GST1_PLUGINS_BAD_PLUGIN_DTLS
+	select BR2_PACKAGE_GST1_PLUGINS_BAD_PLUGIN_SCTP
+	select BR2_PACKAGE_GST1_PLUGINS_BAD_PLUGIN_SRTP
 	help
 	  WebRTC plugins (webrtcbin - a bin for webrtc connections)
 
 comment "webrtc needs a toolchain w/ dynamic library"
 	depends on BR2_STATIC_LIBS
+	depends on BR2_TOOLCHAIN_HAS_SYNC_4
 
 config BR2_PACKAGE_GST1_PLUGINS_BAD_PLUGIN_WEBRTCDSP
 	bool "webrtcdsp"

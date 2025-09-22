@@ -5,7 +5,7 @@
 ################################################################################
 
 LIBXML2_VERSION_MAJOR = 2.13
-LIBXML2_VERSION = $(LIBXML2_VERSION_MAJOR).6
+LIBXML2_VERSION = $(LIBXML2_VERSION_MAJOR).8
 LIBXML2_SOURCE = libxml2-$(LIBXML2_VERSION).tar.xz
 LIBXML2_SITE = \
 	https://download.gnome.org/sources/libxml2/$(LIBXML2_VERSION_MAJOR)
@@ -14,6 +14,18 @@ LIBXML2_LICENSE = MIT
 LIBXML2_LICENSE_FILES = Copyright
 LIBXML2_CPE_ID_VENDOR = xmlsoft
 LIBXML2_CONFIG_SCRIPTS = xml2-config
+
+#0001-tree-Fix-integer-overflow-in-xmlBuildQName.patch
+LIBXML2_IGNORE_CVES += CVE-2025-6021
+
+#0002-schematron-Fix-memory-safety-issues-in-xmlSchematron.patch
+LIBXML2_IGNORE_CVES += CVE-2025-49794 CVE-2025-49796
+
+#0003-Schematron-Fix-null-pointer-dereference-leading-to-D.patch
+LIBXML2_IGNORE_CVES += CVE-2025-49795
+
+# 0004-fix-potential-buffer-overflows-of-interactive-shell.patch
+LIBXML2_IGNORE_CVES += CVE-2025-6170
 
 # relocation truncated to fit: R_68K_GOT16O
 ifeq ($(BR2_m68k_cf),y)
