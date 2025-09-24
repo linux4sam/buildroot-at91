@@ -4,7 +4,7 @@
 #
 ################################################################################
 
-MICROPYTHON_VERSION = 1.22.0
+MICROPYTHON_VERSION = 1.22.2
 MICROPYTHON_SITE = https://micropython.org/resources/source
 MICROPYTHON_SOURCE = micropython-$(MICROPYTHON_VERSION).tar.xz
 # Micropython has a lot of code copied from other projects, and also a number
@@ -14,6 +14,9 @@ MICROPYTHON_LICENSE = MIT, BSD-1-Clause, BSD-3-Clause, Zlib
 MICROPYTHON_LICENSE_FILES = LICENSE
 MICROPYTHON_DEPENDENCIES = host-python3
 MICROPYTHON_CPE_ID_VENDOR = micropython
+
+# 0004-py-objarray-fix-use-after-free-if-extending-a-bytearray-from-itself.patch
+MICROPYTHON_IGNORE_CVES += CVE-2024-8947
 
 # Use fallback implementation for exception handling on architectures that don't
 # have explicit support.

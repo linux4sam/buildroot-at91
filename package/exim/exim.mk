@@ -4,7 +4,7 @@
 #
 ################################################################################
 
-EXIM_VERSION = 4.98.1
+EXIM_VERSION = 4.98.2
 EXIM_SOURCE = exim-$(EXIM_VERSION).tar.xz
 EXIM_SITE = https://ftp.exim.org/pub/exim/exim4
 EXIM_LICENSE = GPL-2.0+
@@ -12,12 +12,6 @@ EXIM_LICENSE_FILES = LICENCE
 EXIM_CPE_ID_VENDOR = exim
 EXIM_SELINUX_MODULES = exim mta
 EXIM_DEPENDENCIES = host-berkeleydb host-pcre2 pcre2 berkeleydb host-pkgconf
-
-# 0006-Fix-regex-n-use-after-free.-Bug-2915.patch
-EXIM_IGNORE_CVES += CVE-2022-3559
-
-# built without dmarc support
-EXIM_IGNORE_CVES += CVE-2022-3620
 
 # Modify a variable value. It must already exist in the file, either
 # commented or not.
