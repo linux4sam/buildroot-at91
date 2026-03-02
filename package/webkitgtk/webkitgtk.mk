@@ -4,7 +4,7 @@
 #
 ################################################################################
 
-WEBKITGTK_VERSION = 2.48.3
+WEBKITGTK_VERSION = 2.50.4
 WEBKITGTK_SITE = https://www.webkitgtk.org/releases
 WEBKITGTK_SOURCE = webkitgtk-$(WEBKITGTK_VERSION).tar.xz
 WEBKITGTK_INSTALL_STAGING = YES
@@ -18,6 +18,10 @@ WEBKITGTK_DEPENDENCIES = host-ruby host-python3 host-gperf host-unifdef \
 	libsoup3 libtasn1 libxml2 libxslt sqlite webp woff2
 
 WEBKITGTK_CMAKE_BACKEND = ninja
+
+# Buildroot adds support for ccache through its
+# toolchain-wrapper, so tell webkitgtk not to mess with it.
+WEBKITGTK_CONF_ENV = WK_USE_CCACHE=NO
 
 WEBKITGTK_CONF_OPTS = \
 	-DENABLE_API_TESTS=OFF \
