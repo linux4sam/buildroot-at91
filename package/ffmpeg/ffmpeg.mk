@@ -4,12 +4,10 @@
 #
 ################################################################################
 
-# Update FFMPEG_CPE_ID_VERSION if needed
-FFMPEG_VERSION = n6.1.2-27-ge16ff06adb
-FFMPEG_SITE = https://git.ffmpeg.org/ffmpeg.git
-FFMPEG_SITE_METHOD = git
+FFMPEG_VERSION = 6.1.3
+FFMPEG_SOURCE = ffmpeg-$(FFMPEG_VERSION).tar.xz
+FFMPEG_SITE = https://ffmpeg.org/releases
 FFMPEG_INSTALL_STAGING = YES
-FFMPEG_CPE_ID_VERSION = 6.1.2
 
 FFMPEG_LICENSE = LGPL-2.1+, libjpeg license
 FFMPEG_LICENSE_FILES = LICENSE.md COPYING.LGPLv2.1
@@ -92,6 +90,13 @@ FFMPEG_CONF_OPTS += --enable-libjack
 FFMPEG_DEPENDENCIES += jack2
 else
 FFMPEG_CONF_OPTS += --disable-libjack
+endif
+
+ifeq ($(BR2_PACKAGE_PULSEAUDIO),y)
+FFMPEG_DEPENDENCIES += pulseaudio
+FFMPEG_CONF_OPTS += --enable-libpulse
+else
+FFMPEG_CONF_OPTS += --disable-libpulse
 endif
 
 ifeq ($(BR2_PACKAGE_LIBV4L),y)
@@ -292,11 +297,11 @@ else
 FFMPEG_CONF_OPTS += --disable-mmal --disable-omx --disable-omx-rpi
 endif
 
-# To avoid a circular dependency only use opencv if opencv itself does
-# not depend on ffmpeg.
-ifeq ($(BR2_PACKAGE_OPENCV3_LIB_IMGPROC)x$(BR2_PACKAGE_OPENCV3_WITH_FFMPEG),yx)
+ifeq ($(BR2_PACKAGE_OPENCV3_LIB_IMGPROC),y)
 FFMPEG_CONF_OPTS += --enable-libopencv
 FFMPEG_DEPENDENCIES += opencv3
+# To avoid a circular dependency only use opencv if opencv itself does
+# not depend on ffmpeg.
 else
 FFMPEG_CONF_OPTS += --disable-libopencv
 endif
@@ -365,6 +370,13 @@ FFMPEG_CONF_OPTS += --enable-libopenmpt
 FFMPEG_DEPENDENCIES += libopenmpt
 else
 FFMPEG_CONF_OPTS += --disable-libopenmpt
+endif
+
+ifeq ($(BR2_PACKAGE_LIBSOXR),y)
+FFMPEG_CONF_OPTS += --enable-libsoxr
+FFMPEG_DEPENDENCIES += libsoxr
+else
+FFMPEG_CONF_OPTS += --disable-libsoxr
 endif
 
 ifeq ($(BR2_PACKAGE_SPEEX),y)

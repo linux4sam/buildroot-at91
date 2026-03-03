@@ -1,3 +1,392 @@
+2025.02.11, released February 20, 2026
+
+	avahi: CVE-2021-3468, CVE-2023-38469, CVE-2023-38470, CVE-2023-38471,
+	  CVE-2023-38472, CVE-2023-38473, CVE-2024-52615, CVE-2024-52616,
+	  CVE-2025-68276, CVE-2025-68468, CVE-2025-68471, CVE-2026-24401
+	bind: CVE-2025-13878
+	busybox: CVE-2025-46394, CVE-2025-60876
+	expat: CVE-2026-24515, CVE-2026-25210
+	glibc: CVE-2025-15281, CVE-2026-0861, CVE-2026-0915
+	gnutls: CVE-2025-14831, CVE-2026-1584
+	haproxy: CVE-2025-11230
+	intel-microcode: CVE-2024-24853, CVE-2025-31648
+	libopenssl: CVE-2025-11187, CVE-2025-15467, CVE-2025-15468,
+	  CVE-2025-66199, CVE-2025-68160, CVE-2025-69418, CVE-2025-69419,
+	  CVE-2025-69420, CVE-2025-69421, CVE-2026-22795, CVE-2026-22796
+	libpng: CVE-2026-22695, CVE-2026-22801, CVE-2026-25646
+	libtasn1: CVE-2025-13151
+	libvpx
+	linux-pam: CVE-2024-10963
+	nginx: CVE-2025-53859
+	nodejs: CVE-2025-27210, CVE-2025-55130, CVE-2025-55131, CVE-2025-55132,
+	  CVE-2025-59465, CVE-2025-59466, CVE-2026-21637
+	python-django: CVE-2025-13473, CVE-2025-14550, CVE-2026-1207, CVE-2026-1285,
+	 CVE-2026-1287, CVE-2026-1312
+	python-urllib3: CVE-2026-21441
+	strongswan: CVE-2025-62291
+	tor: TROVE-2025-016
+	vim: CVE-2025-66476
+	webkitgtk
+
+	Infrastructure updates/fixes:
+
+	arm-trusted-firmware, at91bootstrap3, barebox, linux, opensbi, optee-os,
+	  uboot: Add support for custom license files
+	config-fragments/autobuild: drop a number of duplicated toolchains
+	generate-cyclonedx: fix dependencies
+	Makefile: add check-package-external target
+	pkg-stats: add -N/--needs-update option
+	pkg-stats: fix RuntimeError with python 3.14 asyncio
+	relocate-sdk.sh: pre-calculate files in need of relocation
+	system/Config.in: do not reference md5 for sha256 option
+	testing/run-tests: specify multiprocessing method
+	testing: python-requests: new runtime test
+	testing: test_python.py: disable interpreter colors
+	testing/tests/package/test_firewalld: use ext2 instead of cpio
+
+	Updated / fixed packages: asterisk, at91bootstrap3, avahi, berkeleydb,
+	bind, bitcoin, brltty, busybox, cryptsetup, dash, dc3dd, docker-engine,
+	easy-rsa, ell, expat, frr, glibc, gnutls, haproxy,
+	igmpproxy, intel-microcode, libcec, libcurl, libgphoto2, libgpiod2,
+	libite, libopenssl, libpng, libselinux,
+	libtasn1, libucl, libvpx, libwebsockets, linux, linux-headers,
+	linux-pam, localedef, lockdev, m4, manual, mcelog, mesa3d, mp4v2,
+	mpg123, mpir, mupdf, netdata, nginx, nodejs, php, php-lua, pkg-utils,
+	python3, python-django, python-jinja2, python-urllib3, rp-pppoe,
+	rust-bindgen, safeclib, screen, shadow, spandsp, strongswan, swig,
+	syslog-ng, tor, uclibc, uftp, util-linux, vim, webkitgtk,
+	wireless-regdb, xmlstarlet, zeek
+
+	New package: libpam-pkcs11
+
+	Removed packages: criu, cvs, dbus-triggerd, dvdrw-tools, libsvg, libsvg-cairo, lockdev, gconf,
+
+2025.02.10, released January 20, 2026
+
+	Important / security related fixes:
+
+	apache: CVE-2025-55753, CVE-2025-58098, CVE-2025-59775, CVE-2025-65082,
+	  CVE-2025-66200
+	cryptsetup
+	dropbear: CVE-2025-14282, CVE-2019-6111
+	exim: CVE-2025-67896
+	gnupg2
+	imagemagick: CVE-2025-66628
+	libarchive
+	libcoap: CVE-2025-59391, CVE-2025-65493, CVE-2025-65494
+	  CVE-2025-65495, CVE-2025-65496, CVE-2025-65497, CVE-2025-65498,
+	  CVE-2025-65499, CVE-2025-65500, CVE-2025-65501
+	libcurl: CVE-2025-13034, CVE-2025-14017, CVE-2025-14524,
+	  CVE-2025-14819, CVE-2025-15079, CVE-2025-15224
+	libfcgi: CVE-2025-23016.
+	libfreeimage: CVE-2019-12211, CVE-2019-12213, CVE-2020-24292,
+	  CVE-2020-24293, CVE-2020-24295, CVE-2021-33367, CVE-2021-40263,
+	  CVE-2021-40266, CVE-2023-47995, CVE-2023-47997
+	libpng: CVE-2025-66293
+	liburiparser: CVE-2025-67899
+	libxslt: CVE-2025-7424, CVE-2025-9714, CVE-2025-11731
+	linenoise: CVE-2025-9810
+	perl: CVE-2025-40909
+	php: CVE-2025-14177, CVE-2025-14178, CVE-2025-14180
+	python-django: CVE-2025-13372, CVE-2025-64460
+	python-filelock: CVE-2025-68146
+	python-fonttools: CVE-2025-66034
+	python-urllib3: CVE-2025-66471, CVE-2025-66418
+	unbound: CVE-2025-11411
+	vlc
+	xserver_xorg-server: CVE-2025-62229, CVE-2025-62230,
+	  CVE-2025-62231
+	xwayland: CVE-2025-62229, CVE-2025-62230, CVE-2025-62231
+
+	Infrastructure updates/fixes:
+
+	- pkg-stats use HEAD request & unique HTTP user-agent
+	- cve-check: don't fail with unknown CVE
+	- generate-cyclonedx: support 'resolved_with_pedigree'
+	- testing: add host bin dir to PATH
+	- testing: add libiio python bindings runtime test
+	- testing: ddrescue: use dmsetup from lvm2
+	- testing: ddrescue: use f-string for test config
+	- testing: add tio runtime test
+	- add 'CVE:' trailer in various patches
+	- add md5 hash and update tarball url to various python packages
+	- testing: ltp-testsuite: replace runltp by kirk
+	- testing: new kvmtool runtime test
+	- gitignore: ignore utils/brmake log output named `br.log`
+	- testing: add opus-tools runtime test
+	- testing: add flac runtime test
+
+	Updated / fixed packages: apache, arm-trusted-firmware, atf, audit,
+	bitcoin, boost, busybox, cage, cmake, collectl, cppcms, cpulimit,
+	cryptsetup, dbus, dmraid, dropbear, embiggen-disk, evilwm, exim, ficl,
+	fontconfig, glibc, gnupg2, grpc, gvfs, imagemagick, kvmtool, ledmon,
+	libarchive, libcoap, libcpprestsdk, libcurl, libdill, libfcgi,
+	libfreeimage, libgit2, libgtk3, libgtk4, libiio, libmbus, libpng,
+	libselinux, libtirpc, libupnp, liburiparser, libxml2, libxslt, linenoise,
+	linux-tools, lttng-modules, lugaru, matchbox-fakekey, matchbox-keyboard,
+	matchbox-lib, matchbox-panel, mosh, nfs-utils, open-lldp, opencv4,
+	opencv4-contrib, openjdk, perl, perl-dbd-mysql, perl-mozilla-ca, php, pigz,
+	pixman, python-brotli, python-certifi, python-django, python-filelock,
+	python-fonttools, python-pyqt5, python-urllib3, qt5enginio, qt5webkit,
+	qt6base, racehound, rdesktop, rpcbind, rpi-firmware, softether, softhsm2,
+	spice, ssdp-responder, sway, sysprof, tio, trinity, tzdata, uboot, uclibc,
+	unbound, vim, vlc, xdriver_xf86-video-intel, xen, xinetd,
+	xlib_libxshmfence, xserver_xorg-server, xvkbd, xwayland, zic, zxing-cpp
+
+	Removed packages: opencv3 'protobuf', opencv3 'ffmpeg'
+
+2025.02.9, released December 11, 2025
+
+	Important / security related fixes:
+
+	- asterisk: CVE-2025-1131, CVE-2025-57767, CVE-2025-49832,
+	            CVE-2025-47780, CVE-2025-47779
+	- gnutls: CVE-2025-9820
+	- libpng: CVE-2025-64505, CVE-2025-64506, CVE-2025-64720, CVE-2025-65018
+	- luksmeta: CVE-2025-11568
+	- mariadb: CVE-2025-30693, CVE-2025-30722, CVE-2023-52969,
+	           CVE-2023-52970, CVE-2023-52971
+	- openvpn: CVE-2025-13086
+	- postgresql: CVE-2025-12817, CVE-2025-12818
+	- python-django: CVE-2025-64458, CVE-2025-64459
+	- python-startlette: GHSA-7f5h-v6xp-fcq8
+
+	Infrastructure updates/fixes:
+
+	- New script support/scripts/cve-check to enricht CycloneDX SBoM with
+	  CVE information from NVD database.
+
+	Updated / fixed packages: 18xx-ti-utils, asterisk, gnutls, libpng,
+	libroxml, libteam, linux-headers, luksmeta, mariadb, nbd, neard,
+	openjdk, openjdk-bin, openvpn, oprofile, perl-net-ssleay, postgresql,
+	python-django, python-starlette, redis, sdbusplus, sdl, swipl,
+	tailscale, thermald, tmux, tor
+
+	Removed packages: bctoolbox, belle-sip, belr, linphone, mediastreamer,
+	mongrel2, ortp
+
+2025.02.8, released November 20, 2025
+
+    Important / security related fixes:
+
+	- bind: CVE-2025-8677, CVE-2025-40778, CVE-2025-40780
+	- dante: CVE-2024-54662
+	- erlang: CVE-2024-53846, CVE-2025-4748, CVE-2025-26618, CVE-2025-30211,
+	          CVE-2025-32433, CVE-2025-46712, CVE-2025-48038,
+	          CVE-2025-48039, CVE-2025-48040, CVE-2025-48041
+	- hostapd: CVE-2025-24912
+	- imagemagick: CVE-2025-62171
+	- iptraf-ng: CVE-2024-52949
+	- libarchive: CVE-2025-25724
+	- libglib2: CVE-2024-54662
+	- libvips: CVE-2025-29769, CVE-2025-59933
+	- libvpx: CVE-2025-5283
+	- libxslt: CVE-2025-24855, CVE-2024-55549
+	- mbedtls: CVE-2025-54764, CVE-2025-59438
+	- modsecurity2: CVE-2025-52891, CVE-2025-54571
+	- netdata: CVE-2023-22496, CVE-2023-22497
+	- poppler: CVE-2024-6239, CVE-2024-56378, CVE-2025-32364,
+	           CVE-2025-32365, CVE-2025-43903, CVE-2025-50420,
+	           CVE-2025-52886
+	- python3: gh-139312, gh-139700, gh-139400, gh-135661, gh-135661,
+	           gh-102555, gh-135462, gh-118350, gh-86155
+	- python-webpy: CVE-2025-3818
+	- redis: CVE-2025-46817, CVE-2025-46818, CVE-2025-46819, CVE-2025-49844
+	- samba: CVE-2025-3818, CVE-2025-10230
+	- shairport-sync: Upstream security fixes without CVE
+	- squid: CVE-2025-59362
+	- suricata: CVE-2024-37151, CVE-2024-38535
+	- tpm2-tss: CVE-2024-29040
+	- xerces: CVE-2024-23807
+	- zabbix: CVE-2025-27231, CVE-2025-27236, CVE-2025-27238, CVE-2025-49641
+	- zip: CVE-2018-13410
+
+	Infrastructure updates/fixes:
+
+	- Improved matching of CPE ID with NVD database, resulting in more
+	  accurate identification of CVEs.
+	- brmake: avoid garbled output with top-level parallel build
+
+	Updated / fixed packages: 4th, audit, bind, cmake, crun, dante,
+	ebtables, erlang, freeradius-server, gpsd, gstd, hostapd, imagemagick,
+	iptraf-ng, iozone, ledmon, libarchive, libcurl, libdbi-drivers,
+	libdisplay-info, libglib2, libgphoto2, libgtk3, libheif, libsemanage,
+	libshout, libsolv, libtpms, libvips, libvpx, libwpe, libxslt, linux,
+	linux-headers, live555, mbedtls, micropython, mjpg-streamer,
+	modsecurity2, netdata, netsnmp, poppler, python3, python-flask-cors,
+	python-webpy, quota, qt6multimedia, redis, refpolicy, samba4,
+	selinux-python, sexpect, shairport-sync, siproxd, sqlite, squid,
+	suricata, tor, tpm2-tss, waffle, webkitgtk, wireless-regdb, wpewebkit,
+	xerces, zabbix, zip
+
+	Removed package: ramspeed
+
+	Boards updated / fixed: beagleboneai, cubieboard1, cubieboard2,
+	stm32f429_disco_xip, stm32f746_disco_sd, stm32f769_disco_sd,
+
+	Test Improvements:
+
+	- Capture output of failing commands on host.
+
+
+2025.02.7, released October 11, 2025
+
+    Important / security related fixes:
+
+    - asterisk: CVE-2024-42491
+    - atop: CVE-2025-31160
+    - civetweb: CVE-2025-55763
+    - cjson: CVE-2025-57052
+    - connman: CVE-2025-32366, CVE-2025-32743
+    - cups: CVE-2025-58060, CVE-2025-58364
+    - exiv2: CVE-2023-44398, CVE-2024-24826, CVE-2024-25112, CVE-2024-39695,
+             CVE-2025-26623, CVE-2025-54080, CVE-2025-55304
+    - expat: CVE-2025-59375
+    - fastd: CVE-2025-24356
+    - fetchmail: CVE-2025-61962
+    - ghostscript: CVE-2025-59798, CVE-2025-59799, CVE-2025-59800, CVE-2025-59801
+    - imagemagick: CVE-2023-5341, CVE-2025-55004, CVE-2025-55005, CVE-2025-55160
+    - intel-microcode: CVE-2025-20053, CVE-2025-20109, CVE-2025-22839,
+                       CVE-2025-22840, CVE-2025-22889, CVE-2025-26403
+    - jasper: CVE-2023-51257, CVE-2025-8835
+    - libcurl: CVE-2025-10148, CVE-2025-9086
+    - libopenssl: CVE-2025-9230, CVE-2025-9231, CVE-2025-9232
+    - libssh: CVE-2025-8114, CVE-2025-8277
+    - lua: CVE-2014-5461
+    - opencv4: CVE-2025-53644
+    - pcre2: CVE-2025-58050
+    - poco: CVE-2025-6375
+    - postgresql: CVE-2025-8713, CVE-2025-8714, CVE-2025-8715
+    - python-django: CVE-2025-57833, CVE-2025-59681, CVE-2025-59682
+    - python-flask-cors: CVE-2024-6839, CVE-2024-6844, CVE-2024-6866
+    - python-pip: CVE-2025-8869
+    - raptor: CVE-2024-57822, CVE-2024-57823
+    - sqlite: CVE-2025-6965
+    - syslog-ng: CVE-2024-47619
+    - tiff: CVE-2024-13978, CVE-2025-8961, CVE-2025-9165
+    - udisks: CVE-2025-8067
+    - webkitgtk: CVE-2025-24189, CVE-2025-31273, CVE-2025-31278, CVE-2025-43211,
+      CVE-2025-43212, CVE-2025-43216, CVE-2025-43227, CVE-2025-43228,
+      CVE-2025-43240, CVE-2025-43265, CVE-2025-6558
+    - wireshark: CVE-2025-5601
+
+    Updated / fixed packages: asterisk, atop, boinc, civetweb, cjson,
+    connman, cpp-httplib, cups, cutekeyboard, ecryptfs-utils, exiv2, expat,
+    fastd, fetchmail, ghostscript, gnupg2, gnuplot, htpdate, imagemagick,
+    intel-microcode, iputils, jasper, jose, kodi, libcurl, libopenssl,
+    libssh, libxkbcommon, libxmlrpc, linux-firmware, linux-headers,
+    linuxptp, llvm-project, lua, luaossl, luvi, mariadb, micropython,
+    modsecurity2, opencv4, opencv4-contrib, openjpeg, pango, pcre2, poco,
+    postgresql, python-certifi, python-cryptography, python-django,
+    python-flask-cors, python-pip, python-pyopenssl, python-pytz, raptor,
+    rtl_433, ruby, samba4, sqlite, syslog-ng, sysprof, tiff, tor, uclibc,
+    udisks, upx, webkitgtk, wireshark, wlroots, x11r7, zziplib
+
+    Removed package: netstat-nat
+
+    Boards updated / fixed: beagleboneai, qemu/{x86, x86_64}, ti_am62x_sk
+    versal, zedboard
+
+    Boards removed: roseapplepi, atmel_sama5d3xek, at91sam9260eknf
+
+    Test Improvements:
+
+    - TestSWIPL: increase timeout value
+    - TestOpenJdk: remove stime() function call
+    - test_hardening: update toolchain to aarch64 for checksec tests
+    - test_docker_compose: update kernel & VM CPU
+    - TestZfsUclibc: use internal backend for uClibc-ng toolchain
+    - GitTestBase: remove git daemon due to Gitlab-CI security settings
+
+2025.02.6, released September 09, 2025
+
+	Important / security related fixes:
+
+	- libssh: CVE-2025-4878, CVE-2025-5318, CVE-2025-5351, CVE-2025-5372,
+	    CVE-2025-5449, CVE-2025-5987
+	- glibc: CVE-2025-5702, CVE-2025-5745, CVE-2025-8058
+	- gnutls: CVE-2025-32989, CVE-2025-32988, CVE-2025-32990, CVE-2025-6395
+	- python3: CVE-2025-8194
+	- libhtp: CVE-2025-53537
+	- tiff: CVE-2025-8176, CVE-2025-8177
+	- libglib2: CVE-2025-6052
+	- ofono: CVE-2023-2794, CVE-2024-7537, CVE-2024-7539, CVE-2024-7540,
+	    CVE-2024-7541, CVE-2024-7542
+	- elfutils: CVE-2025-1352, CVE-2025-1365, CVE-2025-1371, CVE-2025-1372,
+	    CVE-2025-1376, CVE-2025-1377
+	- grub2: CVE-2024-45777, CVE-2024-45778, CVE-2024-45779,
+	    CVE-2024-45780, CVE-2024-45782, CVE-2024-56737, CVE-2024-56738,
+	    CVE-2025-0678, CVE-2025-0684, CVE-2025-0685, CVE-2025-0686,
+	    CVE-2025-0689, CVE-2025-1125
+	- openjpeg: CVE-2025-54874
+	- go: CVE-2025-4674, CVE-2025-47907
+	- gst1-plugins-base: CVE-2025-47806, CVE-2025-47807
+	- gst1-plugins-good: CVE-2025-47219, CVE-2025-47183
+	- vorbis-tools: CVE-2023-43361
+	- quickjs: CVE-2025-46688
+	- libde265: CVE-2024-38949, CVE-2024-38950
+	- vim: CVE-2024-41957, CVE-2024-41965, CVE-2024-45306, CVE-2024-47814,
+	    CVE-2025-1215, CVE-2025-22134, CVE-2025-24014, CVE-2025-26603,
+	    CVE-2025-29768, CVE-2025-53905, CVE-2025-53906
+	- ffmpeg: CVE-2023-6602
+	- lighttpd: CVE-2025-8671
+	- python-h2: CPE-2025-57804
+	- cpp-httplib: CVE-2025-46728
+	- iperf3: CVE-2025-54349, CVE-2025-54350
+
+	Removed package: liboauth, thttpd
+
+	Removed defconfig: at91sam9g20dfc, at91sam9g45m10ek,
+	at91sam9rlek, bananapro, beelink_gs1, chromebook_snow, galileo,
+	odroidxu4, orangepi_lite2, orangepi_one_plus, pcengines_apu2,
+	pine64_sopine, riotboard, rock64, rock_pi_n8, socrates_cyclone5,
+	toradex_apalis_imx6, ts7680, engicam_imx6*, kontron_pitx_imx8m, imx6ulz_bsh_smm_m2,
+
+	Test Improvements:
+
+	- test_gstreamer1: raise tesseract-ocr timeout to 15s
+	- test_wine: fix test after bootlin toolchains update
+	- test_numactl: fix test after bootlin toolchains update
+	- test_dpdk: fix test after bootlin toolchains update
+	- test_msr_tools: fix test after bootlin toolchains update
+	- test_dmidecode: fix test after bootlin toolchains update
+	- test_iso9660: use a more recent toolchain
+	- test_gruby: use glibc toolchain
+	- test_wget: replace thttpd by Busybox's httpd server
+	- test_libcurl: replace thttpd by Busybox's httpd server
+	- test_systemd_selinux: fix test after bootlin toolchains update
+
+	Updated / fixed packages: python-propcache, pipewire, apache, xinetd,
+	libssh, glibc, libhtp, libapparmor, php-pecl-dbus, tini, snooze, ngrep,
+	libzenoh-pico, janet, nanocom, rtl8189es, gcc, ofono, python-numpy,
+	elfutils, libtracefs, tinyssh, start-stop-daemon, bcusdk, prboom,
+	setserial, grub2, openjpeg, go, gstreamer1, gst1-plugins-base,
+	gst1-plugins-good, gst1-plugins-bad, gst1-plugins-ugly, gst1-devtools,
+	gst1-libav, gst1-python, gst1-rtsp-server, gst1-vaapi,
+	gstreamer1-editing-services, vorbis-tools, quickjs, libde265, vim,
+	ffmpeg, libv4l, python-yarl, lirc-tools, b43-firmware, tcpreplay,
+	libsvgtiny, libsoxr, lighttpd, uclibc, vde2, libcap-ng, python-h2,
+	squid, ipmitool, ell, proftpd, liblog4c-localtime, wpewebkit, weston,
+	cpp-httplib, ipset, iperf3
+
+	Infrastructure updates/fixes:
+	- Various tweaks to utils/generate-cyclonedx for better SBOM
+	  compatibility and project name/version customization
+	- go: make pre-built compiler provide target support too
+	- test-pkg: add new option -T/--toolchain-name
+	- pkg-utils.mk: include package directory in show-info output
+	- bump-stable-kernel-versions: new tool
+
+	Boards updated / fixed:
+
+	- qemu_sh4*: switch back to disk emulation
+	- acmesystems_acqua_a5_*: update linux
+	- sipeed_licheepi_zero: update linux & uboot
+	- zynqmp: increase vfat partition to 64M
+	- qemu_{arm,aarch64}_{ebbr,sbsa}*: linux needs host python3
+	- canaan_kd233, sipeed*: use BR2_LINUX_KENREL_IMAGE_TARGET_NAME
+	- ci20: U-Boot needs host-openssl
+
 2025.02.5, released August 11, 2025
 
     Important / security related fixes:
